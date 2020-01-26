@@ -5,7 +5,7 @@ import Caurosel from '../ui/Caurosel'
 import Grid from '../ui/Grid'
 import Map from '../ui/Map'
 import Thumb from '../ui/Thumb'
-import Formatter from '../helpers/helpers'
+import Formatter from '../helpers/Formatter'
 import './details.css'
 
 class Details extends React.Component {

@@ -2,7 +2,7 @@ import React from 'react'
 import Caurosel from './Caurosel'
 import Button from './Button'
 
-import Formatter from '../helpers/helpers'
+import Formatter from '../helpers/Formatter'
 
 class Card extends React.Component {
 	render() {
