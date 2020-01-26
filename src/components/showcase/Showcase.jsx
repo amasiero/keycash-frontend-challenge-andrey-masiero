@@ -11,6 +11,15 @@ class Showcase extends React.Component {
 		}
 	}
 
+	handleClick(place) {
+		this.props.history.push({
+			pathname : '/detalhe',
+			state : { 
+				place : {...place}
+			}
+		})
+	}
+
 	componentDidMount() {
 		fetch('http://5e148887bce1d10014baea80.mockapi.io/keycash/challenge')
 			.then(response => response.json())
@@ -24,7 +33,7 @@ class Showcase extends React.Component {
 		return (
 			<div className='container'>
 				<ShowcaseForm />
-				<ShowcaseCards places={this.state.places}/>
+				<ShowcaseCards places={this.state.places} onClick={this.handleClick.bind(this)}/>
 			</div>
 		)
 

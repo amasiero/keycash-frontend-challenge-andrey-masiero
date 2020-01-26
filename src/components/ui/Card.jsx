@@ -2,19 +2,9 @@ import React from 'react'
 import Caurosel from './Caurosel'
 import Button from './Button'
 
+import Formatter from '../helpers/helpers'
+
 class Card extends React.Component {
-	street(address) {
-		return address.split(',')[0]
-	}
-
-	city(address) {
-		return address.split(',')[1].replace(/[0-9]/g, '')
-	}
-
-	formatCurrency(value) {
-		return value.toString().replace(/(?=\d)(\d{3})(\d{2})$/g, '.$1,$2')
-	}
-
 	render() {
 		const place = {...this.props.info}
 		return (
@@ -22,8 +12,8 @@ class Card extends React.Component {
 				<div className='card'>
 					<Caurosel images={place.images} id={place.id} />
 					<div className='card-body'>
-						<h5 className='card-title mb-0'>{this.street(place.address.formattedAddress)}</h5>
-				        <p className='card-text'>{this.city(place.address.formattedAddress)}</p>
+						<h5 className='card-title mb-0'>{Formatter.street(place.address.formattedAddress)}</h5>
+				        <p className='card-text'>{Formatter.city(place.address.formattedAddress)}</p>
 				        <div className='d-flex flex-row'>
 				        	<div className='flex-row'>
 				        		<i className='fa fa-building mr-2' aria-hidden='true'></i>
@@ -35,8 +25,8 @@ class Card extends React.Component {
 				        	</div>
 				        </div>
 				        <div className='d-flex flex-column flex-md-column flex-lg-row justify-content-between'>
-					        <p className='card-text text-danger font-weight-bold mt-3'> Valor: R$ {this.formatCurrency(place.price)}</p>
-					        <Button type='danger' icon='info-circle' label='Detalhes' />
+					        <p className='card-text text-danger font-weight-bold mt-3'> Valor: R$ {Formatter.formatCurrency(place.price)}</p>
+					        <Button type='danger' icon='info-circle' label='Detalhes' onClick={() => this.props.onClick(place)}/>
 				        </div>
 					</div>
 				</div>

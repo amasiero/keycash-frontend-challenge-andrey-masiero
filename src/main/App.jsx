@@ -8,14 +8,14 @@ import 'bootstrap/js/dist/carousel'
 import React from 'react'
 import Header from '../components/ui/Header'
 import Footer from '../components/ui/Footer'
-import Showcase from '../components/showcase/Showcase'
+import Routes from './Routes'
 
 class App extends React.Component {
 	render() {
 		return (
 			<div>
 				<Header />
-				<Showcase />
+				<Routes />
 				<Footer />
 			</div>
 		)

@@ -1,0 +1,7 @@
+@media only screen
+and (min-width: 800px) {
+	.w-70 {
+		margin: 0 auto;
+		width: 70%;
+	}
+}

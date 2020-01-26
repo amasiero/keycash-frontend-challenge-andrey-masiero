@@ -6,7 +6,10 @@ class ShowcaseCards extends React.Component {
 		return (
 			<div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
 				{this.props.places.map((place, index)=> 
-						<Card key={place.id} info={place}  count={index}/>
+						<Card key={place.id} 
+							  info={place} 
+							  count={index} 
+							  onClick={this.props.onClick}/>
 				)}
 			</div>			      
 		)
