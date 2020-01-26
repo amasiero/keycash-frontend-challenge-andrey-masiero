@@ -7,6 +7,7 @@ import 'bootstrap/js/dist/carousel'
 
 import React from 'react'
 import Header from '../components/ui/Header'
+import Footer from '../components/ui/Footer'
 import Showcase from '../components/showcase/Showcase'
 
 class App extends React.Component {
@@ -15,6 +16,7 @@ class App extends React.Component {
 			<div>
 				<Header />
 				<Showcase />
+				<Footer />
 			</div>
 		)
 	}

@@ -16,26 +16,27 @@ class Card extends React.Component {
 	}
 
 	render() {
+		const place = {...this.props.info}
 		return (
 			<div className='col mb-4'>
 				<div className='card'>
-					<Caurosel images={this.props.info.images} id={this.props.info.id} />
+					<Caurosel images={place.images} id={place.id} />
 					<div className='card-body'>
-						<h5 className='card-title mb-0'>{this.street(this.props.info.address.formattedAddress)}</h5>
-				        <p className='card-text'>{this.city(this.props.info.address.formattedAddress)}</p>
+						<h5 className='card-title mb-0'>{this.street(place.address.formattedAddress)}</h5>
+				        <p className='card-text'>{this.city(place.address.formattedAddress)}</p>
 				        <div className='d-flex flex-row'>
 				        	<div className='flex-row'>
 				        		<i className='fa fa-building mr-2' aria-hidden='true'></i>
-				        		{this.props.info.usableArea} m<sup>2</sup>
+				        		{place.usableArea} m<sup>2</sup>
 				        	</div>
 				        	<div className='flex-row ml-3'>
 				        		<i className='fa fa-bed mr-2' aria-hidden='true'></i>
-				        		{this.props.info.bedrooms} {this.props.info.bedrooms === 1 ? 'quarto' : 'quartos'}
+				        		{place.bedrooms} {place.bedrooms === 1 ? 'quarto' : 'quartos'}
 				        	</div>
 				        </div>
-				        <div className='d-flex flex-column flex-md-row justify-content-between'>
-					        <p className='card-text text-danger font-weight-bold mt-3'> Valor: R$ {this.formatCurrency(this.props.info.price)}</p>
-					        <Button style='danger' icon='info-circle' label='Detalhes' />
+				        <div className='d-flex flex-column flex-md-column flex-lg-row justify-content-between'>
+					        <p className='card-text text-danger font-weight-bold mt-3'> Valor: R$ {this.formatCurrency(place.price)}</p>
+					        <Button type='danger' icon='info-circle' label='Detalhes' />
 				        </div>
 					</div>
 				</div>
