@@ -8,13 +8,8 @@ import './showcase.css'
 const URL = 'http://5e148887bce1d10014baea80.mockapi.io/keycash/challenge'
 
 class Showcase extends React.Component {
-	constructor() {
-		super()
-		this.handleClick = this.handleClick.bind(this)
-		this.handleAddressFilter = this.handleAddressFilter.bind(this)
-		this.state = {
-			places : []
-		}
+	state = {
+		places : []
 	}
 
 	refresh(address = '') {
@@ -53,8 +48,8 @@ class Showcase extends React.Component {
 	render() {
 		return (
 			<div className='container'>
-				<ShowcaseForm onChange={this.handleAddressFilter}/>
-				<ShowcaseCards places={this.state.places} onClick={this.handleClick}/>
+				<ShowcaseForm onChange={this.handleAddressFilter.bind(this)}/>
+				<ShowcaseCards places={this.state.places} onClick={this.handleClick.bind(this)}/>
 			</div>
 		)
 
