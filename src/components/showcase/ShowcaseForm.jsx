@@ -12,7 +12,11 @@ class ShowcaseForm extends React.Component {
 								<i className='fa fa-search'></i>
 							</span>
 						</div>
-						<input type='text' className='form-control' id='location' placeholder='Busque pela localização desejada'/>
+						<input type='text' 
+							   className='form-control' 
+							   id='location' 
+							   placeholder='Busque pela localização desejada' 
+							   onChange={(event) => this.props.onChange(event)}/>
 					</div>
 				</Grid>
 			</div>
