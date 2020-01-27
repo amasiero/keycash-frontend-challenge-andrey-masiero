@@ -4,6 +4,7 @@ import './custom.css'
 
 import 'jquery/dist/jquery.min'
 import 'bootstrap/js/dist/carousel'
+import 'bootstrap/js/dist/collapse'
 
 import React from 'react'
 import Header from '../components/ui/Header'

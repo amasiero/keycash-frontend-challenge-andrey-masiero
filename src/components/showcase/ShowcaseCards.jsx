@@ -15,18 +15,20 @@ class ShowcaseCards extends React.Component {
 		})
 	}
 
-	filterCards(places) {
-		const indexOfLastCard = this.state.currentPage * this.state.cardsPerPage
-		const indexOfFirstCard = indexOfLastCard - this.state.cardsPerPage
+
+	filterCards(places, resultsPerPage) {
+
+		const indexOfLastCard = this.state.currentPage * resultsPerPage
+		const indexOfFirstCard = indexOfLastCard - resultsPerPage
 		const currentPlaces = places.slice(indexOfFirstCard, indexOfLastCard)
 		return currentPlaces
 	}
 
 	render() {
 		const places = this.props.places
-		const currentPlaces = this.filterCards(places)
+		const currentPlaces = this.filterCards(places, this.props.resultsPerPage)
 		const totalCards = places.length
-
+		console.log()
 		return (
 			<div>
 				<div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center'>
@@ -37,7 +39,7 @@ class ShowcaseCards extends React.Component {
 								  onClick={this.props.onClick}/>
 					)}
 				</div>
-				<Pagination cardsPerPage={this.state.cardsPerPage} totalCards={totalCards} onClick={this.handlePaginate.bind(this)} />
+				<Pagination cardsPerPage={this.props.resultsPerPage} totalCards={totalCards} onClick={this.handlePaginate.bind(this)} />
 			</div>
 		)	
 	}
