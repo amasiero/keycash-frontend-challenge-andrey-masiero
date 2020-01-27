@@ -7,7 +7,7 @@ import ShowcaseCards from './ShowcaseCards'
 
 import './showcase.css'
 
-const URL = 'http://5e148887bce1d10014baea80.mockapi.io/keycash/challenge'
+const URL = 'https://5e148887bce1d10014baea80.mockapi.io/keycash/challenge'
 
 class Showcase extends React.Component {
 	state = {
